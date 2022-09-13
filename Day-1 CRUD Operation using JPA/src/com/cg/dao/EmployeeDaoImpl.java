@@ -1,42 +1,59 @@
-package com.cg.client;
+package com.cg.dao;
+
+import javax.persistence.EntityManager;
 
 import com.cg.entities.Employee;
-import com.cg.service.EmployeeService;
-import com.cg.service.EmployeeServiceImpl;
 
-public class Client {
+public class EmployeeDaoImpl implements EmployeeDao
+{
+	//we are going to use EntityManager method-CRUD
+	private EntityManager em;
+	
+	//default constructor 
+	public EmployeeDaoImpl() {
+		super();
+		em=JPAUtil.getEntityManager();
+	}
 
-	public static void main(String[] args) {
-		//Lazy initialization
-		EmployeeService service=new EmployeeServiceImpl();
-		Employee emp=new Employee();
+	@Override
+	//to add=>persist(objname);
+	public void addEmployee(Employee emp)
+	{
+		em.persist(emp);
 		
-		/*//create operation
-		emp.setID(103);
-		emp.setNAME("Sambhaji");
-		service.addEmployee(emp);*/
-		
-		/*//reteive a data
-		emp=service.getEmployeeById(102);
-		System.out.println("Emp ID: "+emp.getID());
-		System.out.println("Emp NAME: "+emp.getNAME());*/
-		
-		/*//update a data
-		emp=service.getEmployeeById(102);
-		emp.setNAME("Sanket");
-		service.updateEmployee(emp);*/
-		
-		/*//retreive a data
-		emp=service.getEmployeeById(101);
-		System.out.println("Emp ID: "+emp.getID());
-		System.out.println("Emp NAME: "+emp.getNAME());*/
-		
-		//delete a data
-		emp=service.getEmployeeById(101);
-		service.removeEmployee(emp);
-		
-		
+	}
 
+	@Override
+	//to update=>merge(objname);
+	public void updateEmployee(Employee emp) {
+		em.merge(emp);
+	}
+
+	@Override
+	//to reteive a data=>find(classname,pk);
+	public Employee getEmployeeById(int ID) {
+		Employee emp=em.find(Employee.class, ID);
+		return emp;
+	}
+
+	@Override
+	//to remove=>remove(objname);
+	public void removeEmployee(Employee emp) {
+		em.remove(emp);
+		
+	}
+
+	@Override
+	//transaction method to start and close the Entity Manager
+	public void commitTransaction() {
+		em.getTransaction().commit();
+		
+	}
+
+	@Override
+	public void beginTransaction() {
+		em.getTransaction().begin();
+		
 	}
 
 }
