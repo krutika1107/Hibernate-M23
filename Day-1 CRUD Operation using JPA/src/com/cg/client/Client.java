@@ -1,10 +1,5 @@
 package com.cg.client;
 
-public class Client {
-
-}
-package com.cg.client;
-
 import com.cg.entities.Employee;
 import com.cg.service.EmployeeService;
 import com.cg.service.EmployeeServiceImpl;
