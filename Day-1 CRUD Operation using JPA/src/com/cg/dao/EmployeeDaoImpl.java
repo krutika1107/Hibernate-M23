@@ -46,7 +46,7 @@ public class EmployeeDaoImpl implements EmployeeDao
 	@Override
 	//transaction method to start and close the Entity Manager
 	public void commitTransaction() {
-		em.getTransaction().commit();
+		((Object) em.getTransaction()).commit();
 		
 	}
 
