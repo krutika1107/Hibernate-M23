@@ -13,6 +13,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name="Employee2")
 @Inheritance(strategy=InheritanceType.JOINED)

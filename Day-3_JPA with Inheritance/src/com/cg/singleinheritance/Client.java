@@ -13,19 +13,19 @@ public class Client {
 		
 		//create an employee1
 		Employee e=new Employee();
-		e.setName("Monika");
+		e.setName("Krutika");
 		e.setSalary(35000);
 		em.persist(e);
 		
 		//create an employee1
 		Employee e1=new Employee();
-		e1.setName("Priyanka");
+		e1.setName("Sara");
 		e1.setSalary(25000);
 		em.persist(e1);
 		
 		//create a manager
 		Manager m=new Manager();
-		m.setName("Sumit");
+		m.setName("Purva");
 		m.setSalary(55000);
 		m.setDeptname("Information Technology");
 		em.persist(m);

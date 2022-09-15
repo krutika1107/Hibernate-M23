@@ -4,6 +4,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name="Manager2")
 public class Manager extends Employee
