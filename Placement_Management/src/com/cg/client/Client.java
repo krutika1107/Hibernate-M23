@@ -16,6 +16,7 @@ import com.cg.services.StudentServices;
 import com.cg.services.StudentServicesImpl;
 
 
+@SuppressWarnings("unused")
 public class Client {
 
 	public static void main(String[] args) {
@@ -96,7 +97,7 @@ public class Client {
 				//For User
 				User u=new User();
 				u.setId(1010);
-				u.setName("Sara");
+				u.setName("Shraddha");
 				u.setPassword("14525");
 				u.setType("new User");
 				
@@ -104,7 +105,7 @@ public class Client {
 				Admin a=new Admin();
 				AdminServices ad=new AdminServicesImpl();
 				a.setId(4585);
-				a.setName("Purva");
+				a.setName("Devyani");
 				a.setPassword("45345");
 						
 				//Set methods for User and Admin
