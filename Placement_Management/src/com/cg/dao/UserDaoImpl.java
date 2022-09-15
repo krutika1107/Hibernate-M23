@@ -44,11 +44,6 @@ public class UserDaoImpl implements UserDao
 		em.getTransaction().commit();
 	}
 
-	public boolean canclePlacement(long id) {
-		em.remove(id);
-		return false;
-	}
-
 	@Override
 	public User addNewUser(User user) {
 		// TODO Auto-generated method stub
@@ -66,7 +61,6 @@ public class UserDaoImpl implements UserDao
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 
 
 }

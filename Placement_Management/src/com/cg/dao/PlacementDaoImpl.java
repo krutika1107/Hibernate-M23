@@ -46,11 +46,12 @@ public class PlacementDaoImpl implements PlacementDao
 		em.getTransaction().commit();
 	}
 
+	@Override
 	public boolean canclePlacement(long id) {
-		em.remove(id);
+		// TODO Auto-generated method stub
 		return false;
 	}
-	
+
 
 
 }
