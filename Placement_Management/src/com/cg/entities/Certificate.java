@@ -20,6 +20,7 @@ public class Certificate
 	@JoinColumn(name="Certificate_id")
 	private Student student;
 	
+	
 	// getter and setter method
 	public long getId() {
 		return id;

@@ -62,5 +62,6 @@ public class CertificateDaoImpl implements CertificateDao{
 		return null;
 	}
 
+
 	
 }

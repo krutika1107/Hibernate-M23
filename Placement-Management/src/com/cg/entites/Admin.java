@@ -1,29 +1,35 @@
-package com.cg.entities;
+package com.cg.entites;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Admin")
+@Table(name="admin")
 public class Admin 
 {
 	@Id
+	@Column(name="Id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@Column(name="Name")
 	private String name;
+	
+	@Column(name="Password")
 	private String password;
 	
-	//@OneToOne method for connecting user and admin table
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="User_id")
+	@JoinColumn(name="user_id")
 	private User user;
-	
-	
 
-	//Getter and Setter Method
+	//getters and setters
 	public int getId() {
 		return id;
 	}
@@ -57,4 +63,5 @@ public class Admin
 	}
 	
 	
+
 }

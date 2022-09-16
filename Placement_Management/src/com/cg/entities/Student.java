@@ -5,6 +5,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,7 +17,8 @@ public class Student
 		@Id
 		private long id;
 		private String name;
-		private String college;
+		@SuppressWarnings("unused")
+		private College College;
 		private long roll;
 		private String qualification;
 		private String course;
@@ -29,7 +31,22 @@ public class Student
 		
 		public void setCertificate(Certificate certificate) {
 			Certificate = certificate;
+			
+				
+			}
+			
+			 @ManyToOne(cascade=CascadeType.ALL) //@OneToOne mapping to student and certificate
+				@JoinColumn(name="College_id") 
+				private College college;
+				
+				public void addCollege(College College) {
+					College = college;
 		}
+				
+		public void setCollege1(College College) {
+					this.college = college;
+				}
+
 		// getter and setter method
 		public long getId() {
 			return id;
@@ -74,11 +91,11 @@ public class Student
 			this.hallTicketNo = hallTicketNo;
 		}
 
-		public String getCollege() {
+		public com.cg.entities.College getCollege() {
 			return college;
 		}
 
-		public void setCollege(String college) {
+		public void setCollege(com.cg.entities.College college) {
 			this.college = college;
 		}
 

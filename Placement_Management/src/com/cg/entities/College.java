@@ -1,9 +1,11 @@
 package com.cg.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name="college")
 public class College  
@@ -11,9 +13,16 @@ public class College
 	
 	@Id
 	private int id;
-	private User collegeAdmin ;
 	private String CollegeName ;
 	private String location ;
+	private User collegeAdmin ;
+	
+	//@OneToMany(cascade=CascadeType.ALL) //Using OneToOne Mapping
+		public Student Student;
+	//@OneToOne(mappedBy="College") //Using OneToOne Mapping
+		private Certificate certificate;
+		
+	
 	
 	// getter and setter method
 	public int getId() {

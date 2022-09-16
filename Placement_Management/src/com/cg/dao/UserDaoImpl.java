@@ -6,7 +6,7 @@ import com.cg.entities.Placement;
 import com.cg.entities.User;
 
 
-public class UserDaoImpl implements UserDao
+public abstract class UserDaoImpl implements UserDao
 {
 	private EntityManager em;
 	
@@ -44,23 +44,6 @@ public class UserDaoImpl implements UserDao
 		em.getTransaction().commit();
 	}
 
-	@Override
-	public User addNewUser(User user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public User updatedUser(User user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public User deleteUser(long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 }
